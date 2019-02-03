@@ -270,14 +270,18 @@ module ExternalApis
     end
 
     def yelp_api_get_request_parsed_response(yelp_params)
-      response        = HTTP.auth("Bearer #{ENV['YELP_API_KEY']}").get(url, params: yelp_params)
+      response        = get_request_to_yelp_api(yelp_params)
       parsed_response = response.parse
 
       if response.status.ok?
         parsed_response
       else
-        raise CustomException::Apis::UnableToGetResults.new(response.status.reason, response.status.code, parsed_response['errors'])
+        raise CustomException::Apis::UnableToGetResults.new(response.status.reason, response.status.code, parsed_response['error'])
       end
+    end
+
+    def get_request_to_yelp_api(yelp_params)
+      HTTP.auth("Bearer #{ENV['YELP_API_KEY']}").get(url, params: yelp_params)
     end
 
     # Args
