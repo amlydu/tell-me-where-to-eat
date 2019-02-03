@@ -58,7 +58,7 @@ This API is made for those that want an answer to where they should eat - it can
         - 'medium_rating' will filter out all results that are less than a 3
         - 'low_rating' will filter out all results that are greater than a 3
     
-**Options**:
+#### Options Endpoint:
 
   Returns json with up to 10 different restaurants based on the criteria passed in through the params.
 
@@ -143,7 +143,7 @@ This API is made for those that want an answer to where they should eat - it can
     api/v1/where_to_eat/options?price=cheap_eats&open_now=true&term=breakfast&location=80211&radius=5
   ```
 
-**Just Tell Me**:
+#### Just Tell Me Endpoint:
 
   Returns json with only 1 restaurant based on the criteria passed in through the params.
 
