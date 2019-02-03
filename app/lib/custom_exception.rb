@@ -11,9 +11,11 @@ module CustomException
 
       def message_hash
         {
-          status_code: response_code,
-          status_reason: response_status,
-          external_api_information: additional_error_info
+            error: {
+                status_code: response_code,
+                status_reason: response_status,
+                external_api_information: additional_error_info
+            }
         }
       end
     end

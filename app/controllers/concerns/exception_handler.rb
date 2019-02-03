@@ -4,7 +4,7 @@ module ExceptionHandler
 
   included do
     rescue_from CustomException::Apis::UnableToGetResults do |e|
-      json_response(e.message_hash, :no_content)
+      json_response(e.message_hash, :unprocessable_entity)
     end
   end
 end
