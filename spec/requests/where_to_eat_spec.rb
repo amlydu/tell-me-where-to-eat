@@ -27,6 +27,9 @@ RSpec.describe "Requesting where to eat", :type => :request do
     end
 
     it 'creates a new Search and increments counter' do
+      allow_any_instance_of(ExternalApis::Yelp).to receive(:yelp_api_get_request_parsed_response)
+                                                       .and_return(YelpStubs.payload(:request_with_defaults))
+
       expect{  get '/api/v1/where_to_eat/options' }.to change{ Search.count }.from(0).to(1)
     end
 
@@ -71,6 +74,9 @@ RSpec.describe "Requesting where to eat", :type => :request do
     end
 
     it 'creates a new Search and increments counter' do
+      allow_any_instance_of(ExternalApis::Yelp).to receive(:yelp_api_get_request_parsed_response)
+                                                       .and_return(YelpStubs.payload(:request_with_defaults))
+
       expect{  get '/api/v1/where_to_eat/just_tell_me' }.to change{ Search.count }.from(0).to(1)
     end
 
