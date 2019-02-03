@@ -197,9 +197,9 @@ module ExternalApis
     #
     # Args:
     #   params (Hash)
-    #   ex) {price: "cheap_eats, moderate_spender, treat_yourself"}
+    #   ex) {price: "cheap_eats, moderate_spender, treat_yoself"}
     # Usage:
-    #   format_price({price:"cheap_eats, moderate_spender, treat_yourself"})
+    #   format_price({price:"cheap_eats, moderate_spender, treat_yoself"})
     #   => {price:'1,2,3'}
     def format_price(params)
       price_params = params[:price]
