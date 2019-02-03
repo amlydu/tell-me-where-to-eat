@@ -47,39 +47,12 @@ module ExternalApis
     # Args:
     #   params: (Hash)
     #     location: (String)
-    #         City, State
-    #         -OR-
-    #         Zipcode
-    #     descriptor: (String)
-    #         Describe what you're looking for - could be:
-    #           Meal types: breakfast, lunch, dinner
-    #           Specific food: burrito, sushi,
-    #           Types of cuisines: asian, mediterranean
+    #     term: (String)
     #     open_now: (Boolean)
-    #         Defaulted to false
     #     radius: (Integer)
-    #         Miles as a string
-    #         Max of 24-ish miles (according to the Yelp API); Note: if it maxes out what it can find in the given location
-    #         it will move onto adjacent zipcodes/areas, so this is Yelp's best guess.
     #     price: (String)
-    #         One or multiple can be passed in, comma delimited. 'cheap_eats, moderate_spender'
-    #         Valid Price-points:
-    #             'cheap_eats'
-    #             'moderate_spender'
-    #             'treat_yourself'
-    #             'whole_paycheck'
     #     sort_by: (String)
-    #         'rating' High to Low
-    #         'review_count' Most to Least
-    #         'price' Low to High
     #     filter_by: (String)
-    #         Only supports filtering by rating at this time:
-    #         How Yelps rates:
-    #             Rating for this business (value ranges from 1, 1.5, ... 4.5, 5).
-    #         So for this API:
-    #             'high_rating' will filter out all results that are less than a 4
-    #             'medium_rating' will filter out all results that are less than a 3
-    #             'low_rating' will filter out all results that are greater than a 3
     #
     def search_for_restaurants(params: {}, result_limit: RESULT_LIMIT)
       yelp_params         = create_yelp_params(params)
