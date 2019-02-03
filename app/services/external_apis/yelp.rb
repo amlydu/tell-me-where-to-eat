@@ -11,7 +11,7 @@ module ExternalApis
     API_ENDPOINTS = {
         businesses_search: '/v3/businesses/search',
         businesses: '/v3/businesses/'
-    }
+    }.freeze
 
     ### Default Yelp search params ###
     #
@@ -21,7 +21,7 @@ module ExternalApis
         SEARCH_LIMIT = 35,
         PRICE_STRING='1, 2, 3, 4',
         MAX_RADIUS= 24
-    ]
+    ].freeze
 
     ### Internal String Constants ###
     #
@@ -30,19 +30,19 @@ module ExternalApis
         'moderate_spender' => '2',
         'treat_yoself' => '3',
         'whole_paycheck' => '4'
-    }
+    }.freeze
 
     SORTING_STRINGS = [
         RATING = 'rating',
         REVIEW_COUNT = 'review_count',
         PRICE = 'price'
-    ]
+    ].freeze
 
     FILTER_STRINGS = [
         HIGH_RATING = 'high_rating',
         MED_RATING = 'medium_rating',
         LOW_RATING = 'low_rating'
-    ]
+    ].freeze
 
     # Args:
     #   params: (Hash)
