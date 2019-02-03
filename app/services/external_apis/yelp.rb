@@ -170,31 +170,31 @@ module ExternalApis
 
     # Arguments passed through to Yelp API (https://www.yelp.com/developers/documentation/v3/business_search)
     #   price: (String): Optional.
-    #     Pricing levels to filter the search result with: 1 = $, 2 = $$, 3 = $$$, 4 = $$$$.
-    #       $ = under $10
-    #       $$ = $11-$30
-    #       $$$ = $31-$60
-    #       $$$$ = above $61
-    #     The price filter can be a list of comma delimited pricing levels.
-    #     For example, "1, 2, 3" will filter the results to show the ones that are $, $$, or $$$.
+    #       Pricing levels to filter the search result with: 1 = $, 2 = $$, 3 = $$$, 4 = $$$$.
+    #           $ =   under $10
+    #           $$ = $11-$30
+    #           $$$ = $31-$60
+    #           $$$$ = above $61
+    #       The price filter can be a list of comma delimited pricing levels.
+    #       For example, "1, 2, 3" will filter the results to show the ones that are $, $$, or $$$.
     #   open_now: (Boolean) Optional.
-    #     Default to false. When set to true, only return the businesses open now. Notice that open_at and open_now
-    #     cannot be used together.
+    #       Default to false. When set to true, only return the businesses open now. Notice that open_at and open_now
+    #       cannot be used together.
     #   radius: (Int) Optional.
-    #     A suggested search radius in meters. This field is used as a suggestion to the search.
-    #     The actual search radius may be lower than the suggested radius in dense urban areas, and higher in regions
-    #     of less business density. If the specified value is too large, a AREA_TOO_LARGE error may be returned.
-    #     The max value is 40000 meters (about 25 miles).
+    #       A suggested search radius in meters. This field is used as a suggestion to the search.
+    #       The actual search radius may be lower than the suggested radius in dense urban areas, and higher in regions
+    #       of less business density. If the specified value is too large, a AREA_TOO_LARGE error may be returned.
+    #       The max value is 40000 meters (about 25 miles).
     #   limit: (Int) Optional.
-    #     Number of business results to return. By default, it will return 20. Maximum is 50.
+    #       Number of business results to return. By default, it will return 20. Maximum is 50.
     #   location: (String) Required if either latitude or longitude is not provided.
-    #     This string indicates the geographic area to be used when searching for businesses.
-    #     Examples: "New York City", "NYC", "350 5th Ave, New York, NY 10118".
-    #     Businesses returned in the response may not be strictly within the specified location.
+    #       This string indicates the geographic area to be used when searching for businesses.
+    #       Examples: "New York City", "NYC", "350 5th Ave, New York, NY 10118".
+    #       Businesses returned in the response may not be strictly within the specified location.
     #   term: (String) Optional.
-    #     Search term, for example "food" or "restaurants". The term may also be business names, such as "Starbucks".
-    #     If term is not included the endpoint will default to searching across businesses from a small number of
-    #     popular categories.
+    #       Search term, for example "food" or "restaurants". The term may also be business names, such as "Starbucks".
+    #       If term is not included the endpoint will default to searching across businesses from a small number of
+    #       popular categories.
     def create_yelp_params(updated_params = {})
       updated_params = format_params!(updated_params)
 
